@@ -1,0 +1,37 @@
+class Bicicleta:
+    def __init__(self):
+        # Solicita los datos básicos de la bicicleta al usuario
+        self.tipo = input("Ingrese el tipo de bicicleta (Montaña/Carretera/Híbrida): ")  # Tipo de bicicleta
+        self.modelo = input("Ingrese el modelo de la bicicleta: ")  # Modelo de la bicicleta
+        self.tamano_cuadro = input("Ingrese el tamaño del cuadro (e.g., 18 pulgadas): ")  # Tamaño del cuadro de la bicicleta
+        self.velocidades = input("Ingrese el número de velocidades: ")  # Número de velocidades de la bicicleta
+        self.color = input("Ingrese el color de la bicicleta: ")  # Color de la bicicleta
+        self.precio_compra = float(input("Ingrese el precio de compra de la bicicleta: "))  # Precio de compra de la bicicleta
+        self.marca = "Cyclo"  # Marca predeterminada de la bicicleta
+        self.precio_venta = self.calcular_precio_venta()  # Calcula el precio de venta de la bicicleta
+
+    def calcular_precio_venta(self):
+        # Calcula el precio de venta aplicando un margen del 50% sobre el precio de compra
+        return self.precio_compra * 1.5
+
+    def mostrar_datos(self):
+        # Muestra todos los datos ingresados y calculados de la bicicleta
+        print("\nCaracterísticas de la bicicleta:")
+        print(f"Tipo: {self.tipo}")
+        print(f"Modelo: {self.modelo}")
+        print(f"Tamaño del Cuadro: {self.tamano_cuadro}")
+        print(f"Número de Velocidades: {self.velocidades}")
+        print(f"Color: {self.color}")
+        print(f"Marca: {self.marca}")
+        print(f"Precio de Compra: ${self.precio_compra:.2f}")
+        print(f"Precio de Venta: ${self.precio_venta:.2f}")
+
+# Creación de la primera instancia de la bicicleta y se registran sus datos
+print("Registro de la primera bicicleta:")
+bicicleta1 = Bicicleta()
+bicicleta1.mostrar_datos()
+
+# Creación de la segunda instancia de la bicicleta y se registran sus datos
+print("\nRegistro de la segunda bicicleta:")
+bicicleta2 = Bicicleta()
+bicicleta2.mostrar_datos()

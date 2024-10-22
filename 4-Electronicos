@@ -1,0 +1,41 @@
+class DispositivoElectronico:
+    def __init__(self):
+        # Solicita los datos básicos del dispositivo electrónico al usuario
+        self.tipo = input("Ingrese el tipo de dispositivo (Celular/Tablet/Portátil): ")  # Tipo de dispositivo
+        self.modelo = input("Ingrese el modelo del dispositivo: ")  # Modelo del dispositivo
+        self.capacidad = input("Ingrese la capacidad del dispositivo (e.g., 128GB, 8GB RAM): ")  # Capacidad del dispositivo (almacenamiento o RAM)
+        self.color = input("Ingrese el color del dispositivo: ")  # Color del dispositivo
+        self.pantalla = input("Ingrese el tamaño de la pantalla (e.g., 6.5 pulgadas): ")  # Tamaño de la pantalla del dispositivo
+        self.bateria = input("Ingrese la capacidad de la batería (e.g., 4000mAh): ")  # Capacidad de la batería
+        self.precio_compra = float(input("Ingrese el precio de compra del dispositivo: "))  # Precio de compra del dispositivo
+        self.marca = "PHR"  # Marca predeterminada del dispositivo
+        self.origen = "Importado"  # Origen predeterminado del dispositivo
+        self.precio_venta = self.calcular_precio_venta()  # Calcula el precio de venta basado en el precio de compra
+
+    def calcular_precio_venta(self):
+        # Calcula el precio de venta aplicando un margen del 70% sobre el precio de compra
+        return self.precio_compra * 1.7
+
+    def mostrar_datos(self):
+        # Muestra todos los datos ingresados y calculados del dispositivo electrónico
+        print("\nCaracterísticas del dispositivo:")
+        print(f"Tipo: {self.tipo}")
+        print(f"Modelo: {self.modelo}")
+        print(f"Capacidad: {self.capacidad}")
+        print(f"Color: {self.color}")
+        print(f"Tamaño de Pantalla: {self.pantalla}")
+        print(f"Capacidad de Batería: {self.bateria}")
+        print(f"Marca: {self.marca}")
+        print(f"Origen: {self.origen}")
+        print(f"Precio de Compra: ${self.precio_compra:.2f}")
+        print(f"Precio de Venta: ${self.precio_venta:.2f}")
+
+# Creación de la primera instancia del dispositivo y se registran sus datos
+print("Registro del primer dispositivo:")
+dispositivo1 = DispositivoElectronico()
+dispositivo1.mostrar_datos()
+
+# Creación de la segunda instancia del dispositivo y se registran sus datos
+print("\nRegistro del segundo dispositivo:")
+dispositivo2 = DispositivoElectronico()
+dispositivo2.mostrar_datos()
